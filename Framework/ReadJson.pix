@@ -7,13 +7,13 @@
     <Childs>
       <AbstractStep z:Id="i3" i:type="ExecutedStep">
         <Childs />
-        <Id>455d1977-38d5-434c-8a19-9d18b33c81f6</Id>
+        <Id>f2cfbd0f-7741-45fe-9f4a-20eb29644dc7</Id>
         <Parent z:Ref="i2" />
         <PropertyValues>
           <PropertyValue z:Id="i4">
             <PropertyName>FilePath</PropertyName>
             <_dataType>Expression</_dataType>
-            <_expression>@"Data\json\Productos_2025-10-01.json"</_expression>
+            <_expression>@"C:\Users\ASUS\AppData\Local\PIX\Projects\prueba_tecnica\prueba_tecnica\Data\json\Productos_2025-10-03.json"</_expression>
             <_screenShotBase64 i:nil="true" />
             <_value i:nil="true" />
             <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
@@ -32,41 +32,8 @@
         <EnableStatus>true</EnableStatus>
         <ExceptionHandlingMode>Default</ExceptionHandlingMode>
         <RetryCount>-1</RetryCount>
-        <Text></Text>
+        <Text>Leer JsonPath</Text>
         <_activityFullName>Activities.Files.ReadFile</_activityFullName>
-      </AbstractStep>
-      <AbstractStep z:Id="i6" i:type="ExecutedStep">
-        <Childs />
-        <Id>ccc51830-474a-4528-b96e-2efea4f34e64</Id>
-        <Parent z:Ref="i2" />
-        <PropertyValues>
-          <PropertyValue z:Id="i7">
-            <PropertyName>CSCode</PropertyName>
-            <_dataType>Value</_dataType>
-            <_expression i:nil="true" />
-            <_screenShotBase64 i:nil="true" />
-            <_value xmlns:d7p1="http://www.w3.org/2001/XMLSchema" i:type="d7p1:string">// OJO: jsonContent es un string que viene de la actividad anterior
-string rawJson = jsonContent;
-
-// Deserializar lista de productos
-var products = JsonSerializer.Deserialize&lt;List&lt;Dictionary&lt;string, object&gt;&gt;&gt;(rawJson);
-
-// Mostrar rápido en logs
-foreach (var p in products)
-{
-    Console.WriteLine($"{p["id"]} - {p["title"]} - {p["price"]}");
-}
-</_value>
-            <_xpathSettings xmlns:d7p1="http://schemas.datacontract.org/2004/07/BR.XPath" i:nil="true" />
-          </PropertyValue>
-        </PropertyValues>
-        <SelectedOptionId i:nil="true" />
-        <AutoCloseMode>None</AutoCloseMode>
-        <EnableStatus>true</EnableStatus>
-        <ExceptionHandlingMode>Default</ExceptionHandlingMode>
-        <RetryCount>-1</RetryCount>
-        <Text></Text>
-        <_activityFullName>BR.Core.Base.ExecuteCSCode</_activityFullName>
       </AbstractStep>
     </Childs>
     <Id>9f976461-18ac-4334-a535-d1b30640cc6f</Id>
@@ -82,15 +49,7 @@ foreach (var p in products)
   </Logic>
   <Name>ReadJson.pix</Name>
   <Namespaces xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <Params>
-    <Parameter z:Id="i8">
-      <DefaultValueExpression>jsonContent</DefaultValueExpression>
-      <Description></Description>
-      <Name>jsonContent</Name>
-      <RunnerType>None</RunnerType>
-      <TypeString>System.String</TypeString>
-    </Parameter>
-  </Params>
+  <Params />
   <PlatformVersion xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
     <d2p1:_Build>4</d2p1:_Build>
     <d2p1:_Major>2</d2p1:_Major>
@@ -98,6 +57,19 @@ foreach (var p in products)
     <d2p1:_Revision>0</d2p1:_Revision>
   </PlatformVersion>
   <TemplateVersion xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" i:nil="true" />
-  <Variables xmlns:d2p1="http://schemas.datacontract.org/2004/07/BR.Logic.Params" />
+  <Variables xmlns:d2p1="http://schemas.datacontract.org/2004/07/BR.Logic.Params">
+    <d2p1:Variable z:Id="i6">
+      <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
+      <d2p1:Description></d2p1:Description>
+      <d2p1:Name>jsonPath</d2p1:Name>
+      <d2p1:TypeString>System.String</d2p1:TypeString>
+    </d2p1:Variable>
+    <d2p1:Variable z:Id="i7">
+      <d2p1:DefaultValueExpression></d2p1:DefaultValueExpression>
+      <d2p1:Description></d2p1:Description>
+      <d2p1:Name>jsonContent</d2p1:Name>
+      <d2p1:TypeString>System.String</d2p1:TypeString>
+    </d2p1:Variable>
+  </Variables>
   <Version i:nil="true" />
 </Script>
